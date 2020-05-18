@@ -1,6 +1,6 @@
 {
-  "name": "vue-layer",
-  "version": "1.2.0",
+  "name": "vue-layer-custom",
+  "version": "1.2.3",
   "description": "vue layer component",
   "private": false,
   "scripts": {
@@ -51,7 +51,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zuoyanart/vue-layer.git"
+    "url": "git+https://github.com/ErvingZheng/vue-layer-custom.git"
   },
   "keywords": [
     "vue",

@@ -54,8 +54,8 @@ export default {
         oHeight: 0,
         moveLeft: 0,
         moveTop: 0,
-        tt: {}
-      }
+        tt: {},
+      },
     };
   },
   props: {
@@ -63,16 +63,16 @@ export default {
       type: Object,
       default: function () {
         return {};
-      }
+      },
     },
     cls: {
       type: Object,
       default: function () {
         return {
-          "vl-notify-alert": true
+          "vl-notify-alert": true,
         };
-      }
-    }
+      },
+    },
   },
   async mounted() {
     if (this.options.shade) {
@@ -80,19 +80,19 @@ export default {
       //是否显示遮罩
       document
         .getElementsByClassName("vl-notify-mask")[0]
-        .addEventListener("mousemove", event => {
+        .addEventListener("mousemove", (event) => {
           this.move(event);
         });
       document
         .getElementsByClassName("vl-notify-mask")[0]
-        .addEventListener("mouseup", event => {
+        .addEventListener("mouseup", (event) => {
           this.moveEnd(event);
         });
     } else {
-      document.addEventListener("mousemove", event => {
+      document.addEventListener("mousemove", (event) => {
         this.move(event);
       });
-      document.addEventListener("mouseup", event => {
+      document.addEventListener("mouseup", (event) => {
         this.moveEnd(event);
       });
     }
@@ -109,11 +109,11 @@ export default {
         margin: op.offset[2],
         zIndex: this.zindex,
         width: op.area[0],
-        height: op.area[1]
+        height: op.area[1],
       };
       let a = helper.deepClone(styleBase);
       return this.mergeJson(a, this.addStyle);
-    }
+    },
   },
   methods: {
     mergeJson(options, def) {
@@ -163,11 +163,11 @@ export default {
       this.addStyle = {
         overflow: "hidden",
         bottom: 0,
-        left: "130px",
-        width: "100px",
-        height: "42px",
-        minHeight: "42px",
-        top: "auto"
+        left: "205px",
+        width: "400px",
+        height: "200px",
+        minHeight: "102px",
+        top: "auto",
       };
       this.maxMiniState = 1;
     },
@@ -182,7 +182,7 @@ export default {
         left: "50%",
         width: "100%",
         height: height + "px",
-        minHeight: "42px"
+        minHeight: "42px",
       };
       this.maxMiniState = 2;
     },
@@ -191,7 +191,7 @@ export default {
       this.addStyle = {
         left: "tpx",
         top: "tpx",
-        margin: "t"
+        margin: "t",
       };
       this.maxMiniState = 0;
     },
@@ -242,7 +242,7 @@ export default {
       this.resize.moveTop = event.clientY;
       this.resize.moveLeft = event.clientX;
       this.resize.isResize = true;
-      document.body.addEventListener("mousemove", e => {
+      document.body.addEventListener("mousemove", (e) => {
         this.resizeHandMove(e);
       });
     },
@@ -264,15 +264,13 @@ export default {
     resizeHandMoveEnd() {
       setTimeout(() => {
         this.resize.isResize = false;
-        document.body.removeEventListener("mousemove", e => {
+        document.body.removeEventListener("mousemove", (e) => {
           this.resizeHandMove(e);
         });
       }, 50);
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
-
+<style></style>
